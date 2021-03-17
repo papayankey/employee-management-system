@@ -1,0 +1,36 @@
+{
+  "name": "employee-api",
+  "version": "1.0.0",
+  "description": "api to handle employee crud operations",
+  "main": "app.js",
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'npm run lint && node'",
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "seed": "node ./seeding/index.js"
+  },
+  "author": "benneth yankey",
+  "license": "ISC",
+  "engines": {
+    "node": "14.15.4"
+  },
+  "dependencies": {
+    "bcrypt": "5.0.1",
+    "cookie-parser": "1.4.5",
+    "cors": "2.8.5",
+    "express": "4.17.1",
+    "joi": "17.4.0",
+    "jsonwebtoken": "8.5.1",
+    "sequelize": "6.5.0",
+    "sqlite3": "5.0.2"
+  },
+  "devDependencies": {
+    "eslint": "7.21.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-config-standard": "16.0.2",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.3.1",
+    "nodemon": "2.0.7",
+    "prettier": "2.2.1"
+  }
+}
