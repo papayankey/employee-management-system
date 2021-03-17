@@ -2,11 +2,13 @@
   "name": "employee-api",
   "version": "1.0.0",
   "description": "api to handle employee crud operations",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemon.js server.js --exec 'npm run lint && node'",
-    "lint": "./node_modules/.bin/eslint *.js",
-    "seed": "node ./seeding/index.js"
+    "client": "cd client && npm start",
+    "server": "nodemon server.js --exec 'npm run lint && node'",
+    "lint": "eslint *.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "seed:db": "node seeding/index.js"
   },
   "author": "benneth yankey",
   "license": "ISC",
@@ -15,6 +17,7 @@
   },
   "dependencies": {
     "bcrypt": "5.0.1",
+    "concurrently": "^6.0.0",
     "cookie-parser": "1.4.5",
     "cors": "2.8.5",
     "express": "4.17.1",
