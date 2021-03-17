@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const config = require('./config');
 const { sequelize } = require('./models');
+const path = require('path');
 
 // express server instance
 const app = express();
