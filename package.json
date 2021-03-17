@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "client": "cd client && npm start",
+    "client:build": "cd client && npm run build",
     "server": "nodemon server.js --exec 'npm run lint && node'",
     "lint": "eslint *.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",

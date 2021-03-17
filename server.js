@@ -14,6 +14,18 @@ app.use(express.urlencoded({ extended: true }));
 // routes
 app.use('/api', require('./routes'));
 
+// serve client static build assets
+if (
+  process.env.NODE_ENV === 'production' ||
+  process.env.NODE_ENV === 'staging'
+) {
+  app.use(express.static(path.join(__dirname, 'client/build')));
+
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
+
 // 404 handler
 app.use(function (req, res, next) {
   res.status(404).send({
