@@ -1,7 +1,7 @@
 const Router = require('express').Router();
 
-const authenticationController = require('./controllers/authenticationController');
-const authenticationValidation = require('./middlewares/authenticationValidation');
+const authenticationController = require('../controllers/authenticationController');
+const authenticationValidation = require('../middlewares/authenticationValidation');
 
 Router.post(
   '/register',

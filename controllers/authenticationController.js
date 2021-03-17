@@ -1,5 +1,5 @@
-const { User } = require('./models');
-const createJWTToken = require('./utils/createJWTToken');
+const { User } = require('../models');
+const createJWTToken = require('../utils/createJWTToken');
 
 const authenticationController = {
   async register(req, res) {

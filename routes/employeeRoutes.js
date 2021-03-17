@@ -1,7 +1,7 @@
 const Router = require('express').Router();
 
-const employeeController = require('./controllers/employeeController');
-const authenticate = require('./middlewares/authenticate');
+const employeeController = require('../controllers/employeeController');
+const authenticate = require('../middlewares/authenticate');
 
 Router.use('/employees/*?', authenticate);
 Router.get('/employees', employeeController.getEmployees);
